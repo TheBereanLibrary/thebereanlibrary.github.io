@@ -3,138 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Berean Library | A Digital Theological Resource</title>
+  <title>The Berean Library</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: Georgia, serif;
-      margin: 0;
-      background: #f4f6f8;
-      color: #222;
-      line-height: 1.7;
-    }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 1.5rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 0.75rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-    .intro {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .intro h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #2c3e50;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #1a5276;
-    }
-    .card p {
-      font-size: 0.95rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #2c3e50;
-      color: #fff;
-      margin-top: 3rem;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <h1>The Berean Library</h1>
-    <nav>
-      <a href="index.html">Home</a>
+  <header class="site-header">
+    <div class="logo">
+      <img src="logo.png" alt="The Berean Library Logo">
+      <h1>The Berean Library</h1>
+      <p class="tagline">“Examining the Scriptures Daily” – Acts 17:11</p>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="doctrinal.html">Doctrinal Statement</a>
       <a href="governance.html">Governance</a>
       <a href="qa.html">Q&A</a>
-      <a href="infographics.html">Infographics</a>
       <a href="resources.html">Resources</a>
+      <a href="infographics.html">Infographics</a>
     </nav>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>A Seminary-Level Digital Theological Resource</h2>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>A Digital Seminary for the Next Generation</h2>
       <p>
-        The Berean Library exists to provide believers with biblically faithful, 
-        non-denominational, and academically rigorous resources for study, discipleship, 
-        and ministry. Explore Scripture with trusted tools, timeless doctrine, and carefully 
-        curated materials designed to equip Christians for decades to come.
+        Explore Scripture with scholarly depth and clarity. The Berean Library exists to provide timeless, theologically sound resources for study, teaching, and lifelong growth.
       </p>
+      <a href="resources.html" class="btn">Explore Resources</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="featured">
+      <h2>Featured Areas of Study</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Scripture Tools</h3>
+          <p>Concordances, lexicons, commentaries, and cross-references to aid in deeper study.</p>
+          <a href="resources.html">Learn More →</a>
+        </div>
+        <div class="card">
+          <h3>Foundational Theology</h3>
+          <p>Explore doctrines of creation, atonement, gifts, and the canon of Scripture.</p>
+          <a href="resources.html">Learn More →</a>
+        </div>
+        <div class="card">
+          <h3>Historical Context</h3>
+          <p>Timelines, maps, and original languages to situate the biblical narrative in history.</p>
+          <a href="resources.html">Learn More →</a>
+        </div>
+      </div>
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <h3>Foundations</h3>
-        <p>Explore the essentials of the faith, including <a href="canon.html">Canon</a>, <a href="creation.html">Creation</a>, and <a href="atonement.html">Atonement</a>.</p>
-      </div>
-      <div class="card">
-        <h3>Study Tools</h3>
-        <p>Deepen your understanding with the <a href="concordance.html">Concordance</a>, <a href="lexicon.html">Lexicon</a>, <a href="commentaries.html">Commentaries</a>, and <a href="cross-references.html">Cross-References</a>.</p>
-      </div>
-      <div class="card">
-        <h3>Historical Resources</h3>
-        <p>Engage the flow of redemptive history with <a href="timelines.html">Timelines</a>, <a href="maps.html">Maps</a>, and studies in the <a href="original-languages.html">Original Languages</a>.</p>
-      </div>
-      <div class="card">
-        <h3>Doctrinal & Practical Theology</h3>
-        <p>Examine Scripture’s teaching on <a href="gifts.html">Spiritual Gifts</a>, the church’s <a href="governance.html">Governance</a>, and our <a href="doctrinal.html">Doctrinal Statement</a>.</p>
-      </div>
-      <div class="card">
-        <h3>Infographics</h3>
-        <p>Visualize biblical truth through carefully designed <a href="infographics.html">Infographics</a>, offering clarity at a glance.</p>
-      </div>
-      <div class="card">
-        <h3>Theological Q&A</h3>
-        <p>Find in-depth answers to pressing questions in our <a href="qa.html">Theological Q&A Archive</a>.</p>
-      </div>
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>
+        To serve as a freely accessible theological library, grounded in Scripture and dedicated to the careful study of God’s Word, equipping believers to think deeply, live faithfully, and proclaim truth clearly.
+      </p>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; <span id="year"></span> The Berean Library. All Rights Reserved.</p>
   </footer>
 
