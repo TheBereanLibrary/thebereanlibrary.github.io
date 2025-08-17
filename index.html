@@ -4,72 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Berean Library</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo">
-      <img src="logo.png" alt="The Berean Library Logo">
-      <h1>The Berean Library</h1>
-      <p class="tagline">“Examining the Scriptures Daily” – Acts 17:11</p>
-    </div>
-    <nav class="main-nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="doctrinal.html">Doctrinal Statement</a>
-      <a href="governance.html">Governance</a>
-      <a href="qa.html">Q&A</a>
-      <a href="resources.html">Resources</a>
-      <a href="infographics.html">Infographics</a>
+  <header>
+    <img src="logo.png" alt="The Berean Library Logo" class="logo">
+    <h1>The Berean Library</h1>
+    <p class="tagline">"Examining the Scriptures Daily" – Acts 17:11</p>
+    <nav>
+      <ul>
+        <li><a href="qa.html">Q&A Library</a></li>
+        <li><a href="infographics.html">Infographics</a></li>
+        <li><a href="concordance.html">Concordance</a></li>
+        <li><a href="lexicon.html">Lexicon</a></li>
+        <li><a href="commentaries.html">Commentaries</a></li>
+        <li><a href="doctrinal.html">Doctrinal Statement</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>A Digital Seminary for the Next Generation</h2>
-      <p>
-        Explore Scripture with scholarly depth and clarity. The Berean Library exists to provide timeless, theologically sound resources for study, teaching, and lifelong growth.
-      </p>
-      <a href="resources.html" class="btn">Explore Resources</a>
-    </div>
-  </section>
-
   <main>
-    <section class="featured">
-      <h2>Featured Areas of Study</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Scripture Tools</h3>
-          <p>Concordances, lexicons, commentaries, and cross-references to aid in deeper study.</p>
-          <a href="resources.html">Learn More →</a>
-        </div>
-        <div class="card">
-          <h3>Foundational Theology</h3>
-          <p>Explore doctrines of creation, atonement, gifts, and the canon of Scripture.</p>
-          <a href="resources.html">Learn More →</a>
-        </div>
-        <div class="card">
-          <h3>Historical Context</h3>
-          <p>Timelines, maps, and original languages to situate the biblical narrative in history.</p>
-          <a href="resources.html">Learn More →</a>
-        </div>
-      </div>
+    <section class="hero">
+      <h2>A Digital Seminary Library for the Church</h2>
+      <p>Explore trusted biblical resources, in-depth theological study, and tools to grow in sound doctrine. Built on Scripture, centered on Christ, for believers across generations.</p>
     </section>
 
-    <section class="mission">
-      <h2>Our Mission</h2>
-      <p>
-        To serve as a freely accessible theological library, grounded in Scripture and dedicated to the careful study of God’s Word, equipping believers to think deeply, live faithfully, and proclaim truth clearly.
-      </p>
+    <section class="grid">
+      <a href="qa.html" class="card">
+        <h3>Q&A Library</h3>
+        <p>Comprehensive biblical and theological questions with detailed answers rooted in Scripture.</p>
+      </a>
+      <a href="infographics.html" class="card">
+        <h3>Infographics</h3>
+        <p>Visual explorations of Christian doctrine, history, and Scripture connections.</p>
+      </a>
+      <a href="concordance.html" class="card">
+        <h3>Concordance</h3>
+        <p>Search the Word of God with a complete reference tool.</p>
+      </a>
+      <a href="lexicon.html" class="card">
+        <h3>Lexicon</h3>
+        <p>Engage the original languages of Scripture with scholarly precision.</p>
+      </a>
+      <a href="commentaries.html" class="card">
+        <h3>Commentaries</h3>
+        <p>Access insights from trusted evangelical scholarship.</p>
+      </a>
+      <a href="doctrinal.html" class="card">
+        <h3>Doctrinal Statement</h3>
+        <p>Read our foundational statement of faith, rooted in historic orthodoxy.</p>
+      </a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> The Berean Library. All Rights Reserved.</p>
+  <footer>
+    <p>&copy; 2025 The Berean Library. All Rights Reserved.</p>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
