@@ -59,7 +59,11 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 The Berean Library. All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> The Berean Library. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
