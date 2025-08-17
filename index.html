@@ -3,58 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Berean Library</title>
-  <link rel="stylesheet" href="style.css">
+  <title>The Berean Library | A Digital Theological Resource</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Georgia, serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+      line-height: 1.7;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 0.75rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .intro h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #1a5276;
+    }
+    .card p {
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #2c3e50;
+      color: #fff;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="The Berean Library Logo" class="logo">
     <h1>The Berean Library</h1>
-    <p class="tagline">"Examining the Scriptures Daily" – Acts 17:11</p>
     <nav>
-      <ul>
-        <li><a href="qa.html">Q&A Library</a></li>
-        <li><a href="infographics.html">Infographics</a></li>
-        <li><a href="concordance.html">Concordance</a></li>
-        <li><a href="lexicon.html">Lexicon</a></li>
-        <li><a href="commentaries.html">Commentaries</a></li>
-        <li><a href="doctrinal.html">Doctrinal Statement</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="doctrinal.html">Doctrinal Statement</a>
+      <a href="governance.html">Governance</a>
+      <a href="qa.html">Q&A</a>
+      <a href="infographics.html">Infographics</a>
+      <a href="resources.html">Resources</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>A Digital Seminary Library for the Church</h2>
-      <p>Explore trusted biblical resources, in-depth theological study, and tools to grow in sound doctrine. Built on Scripture, centered on Christ, for believers across generations.</p>
+    <section class="intro">
+      <h2>A Seminary-Level Digital Theological Resource</h2>
+      <p>
+        The Berean Library exists to provide believers with biblically faithful, 
+        non-denominational, and academically rigorous resources for study, discipleship, 
+        and ministry. Explore Scripture with trusted tools, timeless doctrine, and carefully 
+        curated materials designed to equip Christians for decades to come.
+      </p>
     </section>
 
     <section class="grid">
-      <a href="qa.html" class="card">
-        <h3>Q&A Library</h3>
-        <p>Comprehensive biblical and theological questions with detailed answers rooted in Scripture.</p>
-      </a>
-      <a href="infographics.html" class="card">
+      <div class="card">
+        <h3>Foundations</h3>
+        <p>Explore the essentials of the faith, including <a href="canon.html">Canon</a>, <a href="creation.html">Creation</a>, and <a href="atonement.html">Atonement</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Study Tools</h3>
+        <p>Deepen your understanding with the <a href="concordance.html">Concordance</a>, <a href="lexicon.html">Lexicon</a>, <a href="commentaries.html">Commentaries</a>, and <a href="cross-references.html">Cross-References</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Historical Resources</h3>
+        <p>Engage the flow of redemptive history with <a href="timelines.html">Timelines</a>, <a href="maps.html">Maps</a>, and studies in the <a href="original-languages.html">Original Languages</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Doctrinal & Practical Theology</h3>
+        <p>Examine Scripture’s teaching on <a href="gifts.html">Spiritual Gifts</a>, the church’s <a href="governance.html">Governance</a>, and our <a href="doctrinal.html">Doctrinal Statement</a>.</p>
+      </div>
+      <div class="card">
         <h3>Infographics</h3>
-        <p>Visual explorations of Christian doctrine, history, and Scripture connections.</p>
-      </a>
-      <a href="concordance.html" class="card">
-        <h3>Concordance</h3>
-        <p>Search the Word of God with a complete reference tool.</p>
-      </a>
-      <a href="lexicon.html" class="card">
-        <h3>Lexicon</h3>
-        <p>Engage the original languages of Scripture with scholarly precision.</p>
-      </a>
-      <a href="commentaries.html" class="card">
-        <h3>Commentaries</h3>
-        <p>Access insights from trusted evangelical scholarship.</p>
-      </a>
-      <a href="doctrinal.html" class="card">
-        <h3>Doctrinal Statement</h3>
-        <p>Read our foundational statement of faith, rooted in historic orthodoxy.</p>
-      </a>
+        <p>Visualize biblical truth through carefully designed <a href="infographics.html">Infographics</a>, offering clarity at a glance.</p>
+      </div>
+      <div class="card">
+        <h3>Theological Q&A</h3>
+        <p>Find in-depth answers to pressing questions in our <a href="qa.html">Theological Q&A Archive</a>.</p>
+      </div>
     </section>
   </main>
 
