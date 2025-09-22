@@ -4,10 +4,10 @@ menuItems.forEach(item => {
     item.addEventListener('click', () => {
         // Remove active class from all
         menuItems.forEach(i => i.classList.remove('active'));
-        // Add active class to clicked
+        // Highlight selected
         item.classList.add('active');
 
-        // Load corresponding content
+        // Load content
         const page = item.getAttribute('data-page');
         loadContent(page);
     });
