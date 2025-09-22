@@ -1,11 +1,14 @@
-// Simple mobile dropdown toggle (if you expand for mobile later)
-document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
-    
-    if(menuButton) {
-        menuButton.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-    }
+const menuItems = document.querySelectorAll('.menu li');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remove active class from all
+        menuItems.forEach(i => i.classList.remove('active'));
+        // Add active class to clicked
+        item.classList.add('active');
+
+        // Load corresponding content
+        const page = item.getAttribute('data-page');
+        loadContent(page);
+    });
 });
