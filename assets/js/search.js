@@ -1,77 +1,47 @@
-// search.js — client-side search for content JSON
-const Search = (function() {
-  const searchInput = document.getElementById('site-search');
-  const contentFiles = [
-    // list all content files (same as content folder)
-    'content/welcome-about.json','content/welcome-new-believers.json','content/welcome-howto.json','content/welcome-testimony.json','content/welcome-evaluating-christianity.json','content/welcome-vs-other-religions.json',
-    'content/bible-overview.json','content/bible-books.json','content/bible-translations.json','content/bible-timeline.json','content/bible-reading.json','content/bible-word-studies.json','content/bible-versions.json','content/bible-study-websites.json',
-    'content/doctrine-salvation.json','content/doctrine-heaven-hell.json','content/doctrine-endtimes.json','content/doctrine-holy-spirit.json','content/doctrine-satan.json','content/doctrine-baptism.json','content/doctrine-church.json','content/doctrine-difficult-questions.json','content/doctrine-discernment.json','content/doctrine-deception.json',
-    'content/living-walking.json','content/living-prayer.json','content/living-marriage-singleness.json','content/living-lukewarm.json','content/living-habits.json','content/living-discipleship.json','content/living-jesus-ministry.json','content/living-fruits.json','content/living-gifts.json',
-    'content/history-timeline.json','content/history-apostles-death.json','content/history-faithful-witnesses.json','content/history-lessons.json','content/history-denominations.json','content/history-evaluation-checklist.json',
-    'content/reference-topical-index.json','content/reference-research-topics.json','content/reference-youtube.json','content/reference-pastors.json','content/reference-websites.json','content/reference-infographics.json','content/reference-study-methods.json',
-    'content/qna-difficult.json','content/qna-salvation-prayer.json','content/qna-everyday.json','content/qna-discernment.json',
-    'content/growth-reading-plans.json','content/growth-small-groups.json','content/growth-topical-studies.json','content/growth-reflections.json'
-  ];
-  let index = [];
+// search.js — live search with highlight & keyboard nav
+import { CONTENT_FILES } from './content-routes.js';
 
-  function buildIndex() {
-    // fetch all content JSON once and build in-memory index
-    const fetches = contentFiles.map(f => fetch(f).then(r => r.json()).catch(()=>null));
-    return Promise.all(fetches).then(results => {
-      index = results.filter(Boolean).map(json => ({
-        title: json.title,
-        excerpt: (json.excerpt || '').slice(0,200),
-        body: (json.body || '').replace(/<[^>]*>/g,'').slice(0,400),
-        path: json.path || json.slug || '', // some json include path
-        file: json.file || ''
-      }));
+const searchInput = document.getElementById('site-search');
+let allContent = [];
 
-      // if path is empty, attempt to reconstruct from filename
-      index.forEach(item => {
-        if (!item.path) {
-          // naive: derive from file name
-          // map file string to hash route
-        }
-      });
-
-      return index;
-    });
+async function loadAllContent(){
+  for(const file of CONTENT_FILES){
+    const res = await fetch(file);
+    const data = await res.json();
+    allContent.push({file, title:data.title||'', body:data.body.map(b=>b.text||'').join(' ')});
   }
+}
+loadAllContent();
 
-  function doSearch(q) {
-    if (!q || q.trim().length < 1) return [];
-    const term = q.trim().toLowerCase();
-    const results = index.filter(it => (it.title && it.title.toLowerCase().includes(term)) || (it.body && it.body.toLowerCase().includes(term)));
-    return results;
+function highlightTerm(text, term){
+  const re = new RegExp(`(${term})`, 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+let resultsPanel;
+searchInput.addEventListener('input', e=>{
+  const term = e.target.value.trim();
+  if(!term){ removeResults(); return; }
+  if(!resultsPanel){
+    resultsPanel = document.createElement('div');
+    resultsPanel.className='search-results';
+    searchInput.parentElement.appendChild(resultsPanel);
   }
-
-  function showResults(results) {
-    // simple overlay under search input
-    let container = document.querySelector('.search-results');
-    if (!container) {
-      container = document.createElement('div');
-      container.className = 'search-results';
-      document.querySelector('.menu-right').appendChild(container);
+  resultsPanel.innerHTML='';
+  let matches = 0;
+  allContent.forEach(c=>{
+    if(c.title.toLowerCase().includes(term.toLowerCase()) || c.body.toLowerCase().includes(term.toLowerCase())){
+      matches++;
+      const snippet = c.body.substring(0,120) + (c.body.length>120?'…':'');
+      const div = document.createElement('div');
+      div.className='result';
+      div.innerHTML = `<a href="#${Object.keys(ROUTES).find(k=>ROUTES[k]===c.file)}">${highlightTerm(c.title, term)}</a><p>${highlightTerm(snippet, term)}</p>`;
+      resultsPanel.appendChild(div);
     }
-    container.innerHTML = results.length ? results.map(r => `<div class="result"><a href="${r.path || '#/'}">${r.title}</a><p>${r.excerpt || r.body}</p></div>`).join('') : '<div class="result"><p>No results</p></div>';
-  }
+  });
+  if(matches===0) resultsPanel.innerHTML='<p>No results found.</p>';
+});
 
-  return {
-    init: function() {
-      buildIndex().then(()=> {
-        // wire up input
-        if (searchInput) {
-          let timeout = null;
-          searchInput.addEventListener('input', (e)=>{
-            clearTimeout(timeout);
-            const v = e.target.value;
-            timeout = setTimeout(()=> {
-              const res = doSearch(v);
-              showResults(res);
-            }, 250);
-          });
-        }
-      });
-    }
-  };
-})();
+function removeResults(){ if(resultsPanel){ resultsPanel.remove(); resultsPanel=null; } }
+document.addEventListener('click', e=>{ if(!searchInput.contains(e.target)) removeResults(); });
+
