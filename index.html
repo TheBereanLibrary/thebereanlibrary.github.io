@@ -7,10 +7,12 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header>
-  <img src="assets/img/logo.png" alt="Berean Library Logo" class="logo">
-  <h1>The Berean Library</h1>
-  <p class="tagline">"Examining the Scriptures Daily" – Acts 17:11</p>
+
+<div class="sidebar">
+  <div class="logo-container">
+    <img src="assets/img/logo.png" alt="Berean Library Logo" class="logo">
+    <h2>The Berean Library</h2>
+  </div>
   <nav>
     <ul>
       <li><a href="#" data-page="welcome-about">Welcome</a></li>
@@ -23,22 +25,64 @@
       <li><a href="#" data-page="growth-reading-plans">Growth</a></li>
     </ul>
   </nav>
-</header>
+  <footer>
+    <p>&copy; <span id="year"></span> The Berean Library</p>
+  </footer>
+</div>
 
-<main id="content-area">
-  <h2>Welcome to The Berean Library</h2>
-  <p>Your digital seminary-level library for Bible study, theological research, and spiritual growth. Click a section above to begin exploring.</p>
-</main>
+<div class="content-area" id="content-area">
+  <section class="hero">
+    <h1>Welcome to The Berean Library</h1>
+    <p>Your seminary-level digital library for Bible study, theological research, and spiritual growth. Use the sidebar to explore.</p>
+  </section>
 
-<footer>
-  <p>&copy; <span id="year"></span> The Berean Library. All Rights Reserved.</p>
-</footer>
+  <section class="cards-grid">
+    <a href="#" data-page="bible-overview" class="card">
+      <h3>Bible</h3>
+      <p>Explore books, translations, timelines, and word studies.</p>
+    </a>
+    <a href="#" data-page="doctrine-salvation" class="card">
+      <h3>Doctrine</h3>
+      <p>Salvation, end times, holy spirit, baptism, heaven & hell, and more.</p>
+    </a>
+    <a href="#" data-page="living-walking" class="card">
+      <h3>Christian Living</h3>
+      <p>Prayer, discipleship, marriage, habits, fruits & gifts of the Spirit.</p>
+    </a>
+    <a href="#" data-page="history-timeline" class="card">
+      <h3>History</h3>
+      <p>Early church, apostles, denominations, faithful witnesses, and evaluations.</p>
+    </a>
+    <a href="#" data-page="reference-topical-index" class="card">
+      <h3>Reference</h3>
+      <p>Research topics, YouTube channels, pastors, study tools, and websites.</p>
+    </a>
+    <a href="#" data-page="qna-difficult" class="card">
+      <h3>Q&A</h3>
+      <p>Answers to difficult questions and everyday Christian challenges.</p>
+    </a>
+    <a href="#" data-page="growth-reading-plans" class="card">
+      <h3>Growth</h3>
+      <p>Reading plans, small groups, topical studies, and personal reflections.</p>
+    </a>
+  </section>
+</div>
 
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/content-loader.js"></script>
-<script src="assets/js/search.js"></script>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Add card click behavior same as sidebar
+const cards = document.querySelectorAll('.cards-grid .card');
+cards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault();
+    const page = card.dataset.page;
+    loadContent(page);
+  });
+});
 </script>
+
 </body>
 </html>
