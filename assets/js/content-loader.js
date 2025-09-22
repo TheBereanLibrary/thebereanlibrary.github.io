@@ -10,7 +10,7 @@ function loadContent(page) {
             readingArea.innerHTML = html;
         })
         .catch(err => {
-            readingArea.innerHTML = `<h2>Content Not Found</h2><p>Sorry, we couldn't find the content for this section.</p>`;
+            readingArea.innerHTML = `<h2>Content Not Found</h2><p>Sorry, we couldn’t find the content for this section.</p>`;
             console.error(err);
         });
 }
