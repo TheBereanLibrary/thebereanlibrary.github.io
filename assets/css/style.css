@@ -1,13 +1,13 @@
-/* General Reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body, html {
     height: 100%;
+    font-family: 'Georgia', serif;
 }
 
 .container {
@@ -20,15 +20,14 @@ body, html {
     width: 250px;
     background-color: #0b3d91;
     color: #fff;
-    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
+    padding: 2rem 1rem;
 }
 
-.sidebar h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    text-align: center;
+.logo {
+    width: 180px;
+    margin: 0 auto 2rem auto;
 }
 
 .menu {
@@ -36,13 +35,14 @@ body, html {
 }
 
 .menu li {
-    padding: 0.7rem;
+    padding: 0.7rem 1rem;
     cursor: pointer;
     border-radius: 4px;
     margin-bottom: 0.3rem;
+    transition: background-color 0.3s;
 }
 
-.menu li:hover {
+.menu li:hover, .menu li.active {
     background-color: #185abc;
 }
 
@@ -54,8 +54,8 @@ body, html {
     overflow-y: auto;
 }
 
-.reading-area h2 {
-    font-size: 2rem;
+.reading-area h1, .reading-area h2 {
+    color: #0b3d91;
     margin-bottom: 1rem;
 }
 
@@ -63,9 +63,4 @@ body, html {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1rem;
-}
-
-/* Smooth transitions */
-.reading-area, .sidebar li {
-    transition: all 0.3s ease;
 }
