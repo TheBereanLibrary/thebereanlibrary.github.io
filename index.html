@@ -1,94 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Berean Library</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Berean Library</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header>
-    <img src="assets/img/logo.png" alt="The Berean Library Logo" class="logo">
-    <h1>The Berean Library</h1>
-    <p class="tagline">"Examining the Scriptures Daily" – Acts 17:11</p>
-    <nav>
-      <ul>
-        <li><a href="qa.html">Q&A Library</a></li>
-        <li><a href="infographics.html">Infographics</a></li>
-        <li><a href="concordance.html">Concordance</a></li>
-        <li><a href="lexicon.html">Lexicon</a></li>
-        <li><a href="commentaries.html">Commentaries</a></li>
-        <li><a href="doctrinal.html">Doctrinal Statement</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="bible.html">Bible</a></li>
-        <li><a href="living.html">Christian Living</a></li>
-        <li><a href="history.html">Church History</a></li>
-        <li><a href="reference.html">Reference</a></li>
-        <li><a href="growth.html">Growth</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <img src="assets/img/logo.png" alt="Berean Library Logo" class="logo">
+  <h1>The Berean Library</h1>
+  <p class="tagline">"Examining the Scriptures Daily" – Acts 17:11</p>
+  <nav>
+    <ul>
+      <li><a href="#" data-page="welcome-about">Welcome</a></li>
+      <li><a href="#" data-page="bible-overview">Bible</a></li>
+      <li><a href="#" data-page="doctrine-salvation">Doctrine</a></li>
+      <li><a href="#" data-page="living-walking">Christian Living</a></li>
+      <li><a href="#" data-page="history-timeline">History</a></li>
+      <li><a href="#" data-page="reference-topical-index">Reference</a></li>
+      <li><a href="#" data-page="qna-difficult">Q&A</a></li>
+      <li><a href="#" data-page="growth-reading-plans">Growth</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <h2>A Digital Seminary Library for the Church</h2>
-      <p>Explore trusted biblical resources, in-depth theological study, and tools to grow in sound doctrine. Built on Scripture, centered on Christ, for believers across generations.</p>
-    </section>
+<main id="content-area">
+  <h2>Welcome to The Berean Library</h2>
+  <p>Your digital seminary-level library for Bible study, theological research, and spiritual growth. Click a section above to begin exploring.</p>
+</main>
 
-    <section class="grid">
-      <a href="qa.html" class="card">
-        <h3>Q&A Library</h3>
-        <p>Comprehensive biblical and theological questions with detailed answers rooted in Scripture.</p>
-      </a>
-      <a href="infographics.html" class="card">
-        <h3>Infographics</h3>
-        <p>Visual explorations of Christian doctrine, history, and Scripture connections.</p>
-      </a>
-      <a href="concordance.html" class="card">
-        <h3>Concordance</h3>
-        <p>Search the Word of God with a complete reference tool.</p>
-      </a>
-      <a href="lexicon.html" class="card">
-        <h3>Lexicon</h3>
-        <p>Engage the original languages of Scripture with scholarly precision.</p>
-      </a>
-      <a href="commentaries.html" class="card">
-        <h3>Commentaries</h3>
-        <p>Access insights from trusted evangelical scholarship.</p>
-      </a>
-      <a href="doctrinal.html" class="card">
-        <h3>Doctrinal Statement</h3>
-        <p>Read our foundational statement of faith, rooted in historic orthodoxy.</p>
-      </a>
-      <a href="bible.html" class="card">
-        <h3>Bible Studies</h3>
-        <p>Explore the Word of God, books of the Bible, timelines, translations, and word studies.</p>
-      </a>
-      <a href="living.html" class="card">
-        <h3>Christian Living</h3>
-        <p>Learn about prayer, discipleship, marriage, singleness, habits, and spiritual growth.</p>
-      </a>
-      <a href="history.html" class="card">
-        <h3>Church History</h3>
-        <p>Discover the early church, faithful witnesses, denominational differences, and apostolic history.</p>
-      </a>
-      <a href="reference.html" class="card">
-        <h3>Reference Tools</h3>
-        <p>Research topics, Bible study websites, pastors, YouTube resources, and more.</p>
-      </a>
-      <a href="growth.html" class="card">
-        <h3>Growth Resources</h3>
-        <p>Reading plans, small groups, topical studies, and reflections for spiritual growth.</p>
-      </a>
-    </section>
-  </main>
+<footer>
+  <p>&copy; <span id="year"></span> The Berean Library. All Rights Reserved.</p>
+</footer>
 
-  <footer>
-    <p>&copy; <span id="year"></span> The Berean Library. All Rights Reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/content-loader.js"></script>
+<script src="assets/js/search.js"></script>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
