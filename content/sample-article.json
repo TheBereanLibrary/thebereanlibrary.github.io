@@ -1,0 +1,67 @@
+{
+  "title": "Sample Article Title",
+  "slug": "/sample-article",
+  "breadcrumb": "Sample Article",
+  "excerpt": "A short 1-2 sentence summary of the article for search results.",
+  "toc": [
+    {"label":"Introduction","href":"/sample-article#introduction"},
+    {"label":"Section 1","href":"/sample-article#section-1"},
+    {"label":"Section 2","href":"/sample-article#section-2"},
+    {"label":"Conclusion","href":"/sample-article#conclusion"}
+  ],
+  "body": [
+    {
+      "type":"p",
+      "text":"Start your article here with an introductory paragraph. This is displayed as a normal paragraph."
+    },
+    {
+      "type":"h2",
+      "id":"introduction",
+      "text":"Introduction"
+    },
+    {
+      "type":"p",
+      "text":"Provide the background or context in this section. You can also include Scripture quotes or explanations."
+    },
+    {
+      "type":"h2",
+      "id":"section-1",
+      "text":"Section 1"
+    },
+    {
+      "type":"p",
+      "text":"This is the first main section of your article. Include any content, bullet points, or quotes."
+    },
+    {
+      "type":"ul",
+      "items":[
+        "Point 1",
+        "Point 2",
+        "Point 3"
+      ]
+    },
+    {
+      "type":"blockquote",
+      "text":"You can include highlighted Scripture or quotes in blockquotes for emphasis."
+    },
+    {
+      "type":"h2",
+      "id":"section-2",
+      "text":"Section 2"
+    },
+    {
+      "type":"p",
+      "text":"This is the second main section. Keep paragraphs concise for readability."
+    },
+    {
+      "type":"h2",
+      "id":"conclusion",
+      "text":"Conclusion"
+    },
+    {
+      "type":"p",
+      "text":"End the article with a summary or final thought. Encourage further study or application."
+    }
+  ],
+  "extra": "<p>Optional extra HTML content if you want to include images, links, or special notes.</p>"
+}
