@@ -174,9 +174,8 @@
     // set current year
     document.getElementById('year').textContent = new Date().getFullYear();
     // initialize content loader (loads default or route)
-    ContentLoader.init();
-    Search.init();
+    if (typeof ContentLoader !== 'undefined' && ContentLoader.init) ContentLoader.init();
+    if (typeof Search !== 'undefined' && Search.init) Search.init();
   </script>
 </body>
-</html>
 </html>
