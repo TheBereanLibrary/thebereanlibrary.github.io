@@ -7,59 +7,30 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>The Berean Library</h1>
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="welcome-hall/about.html">Welcome</a></li>
-                <li><a href="bible-wing/overview.html">Bible</a></li>
-                <li><a href="doctrine/overview.html">Doctrine</a></li>
-                <li><a href="christian-living/overview.html">Christian Living</a></li>
-                <li><a href="church-history/overview.html">Church History</a></li>
-                <li><a href="reference/overview.html">Reference</a></li>
-                <li><a href="qna/overview.html">Q&A</a></li>
-                <li><a href="growth-hall/overview.html">Growth</a></li>
+    <div class="container">
+        <!-- Sidebar Menu -->
+        <aside class="sidebar">
+            <h2>The Berean Library</h2>
+            <ul class="menu">
+                <li data-page="welcome-about">Welcome</li>
+                <li data-page="bible-overview">Bible</li>
+                <li data-page="doctrine-overview">Doctrine</li>
+                <li data-page="living-overview">Christian Living</li>
+                <li data-page="history-overview">Church History</li>
+                <li data-page="reference-overview">Reference</li>
+                <li data-page="qna-overview">Q&A</li>
+                <li data-page="growth-overview">Growth</li>
             </ul>
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search the library...">
-                <button id="search-btn">Search</button>
-            </div>
-        </nav>
-    </header>
+        </aside>
 
-    <main>
-        <section class="hero">
+        <!-- Main Reading Area -->
+        <main class="reading-area" id="reading-area">
             <h2>Welcome to The Berean Library</h2>
-            <p>A comprehensive, Scripture-centered digital library for believers of all levels.</p>
-            <p>Explore the Bible, Christian doctrine, living guidance, history, Q&A, and study resources.</p>
-        </section>
-
-        <section class="highlights">
-            <div class="highlight">
-                <h3>Bible Wing</h3>
-                <p>Explore Scripture with overviews, timelines, translations, and word studies.</p>
-                <a href="bible-wing/overview.html">Enter Bible Wing</a>
-            </div>
-            <div class="highlight">
-                <h3>Doctrine</h3>
-                <p>Study salvation, heaven & hell, the Holy Spirit, and end times.</p>
-                <a href="doctrine/overview.html">Explore Doctrine</a>
-            </div>
-            <div class="highlight">
-                <h3>Christian Living</h3>
-                <p>Grow in prayer, discipleship, godly marriage, and spiritual disciplines.</p>
-                <a href="christian-living/overview.html">Start Living</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 The Berean Library | <a href="welcome-hall/about.html">About</a></p>
-    </footer>
+            <p>This is your digital library for in-depth Scripture study, Christian living guidance, and theological resources. Click a topic from the left menu to start reading.</p>
+        </main>
+    </div>
 
     <script src="assets/js/nav.js"></script>
-    <script src="assets/js/search.js"></script>
+    <script src="assets/js/content-loader.js"></script>
 </body>
 </html>
