@@ -1,0 +1,140 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Georgia', serif;
+    background-color: #f9f9f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0b3d91;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header .logo {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+}
+
+header .tagline {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #185abc;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #e3f2fd;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: #0b3d91;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Grid Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+}
+
+.card {
+    display: block;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #0b3d91;
+    margin-bottom: 0.7rem;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #0b3d91;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .grid {
+        padding: 2rem 1rem;
+    }
+}
