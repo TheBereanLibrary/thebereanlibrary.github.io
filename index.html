@@ -1,88 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Berean Library</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Berean Library — Scripture-centered Resources</title>
+  <meta name="description" content="The Berean Library: a Scripture-centered, non-denominational evangelical resource. Bible study, doctrine, Christian living, research, and Q&A." />
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<div class="sidebar">
-  <div class="logo-container">
-    <img src="assets/img/logo.png" alt="Berean Library Logo" class="logo">
-    <h2>The Berean Library</h2>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#" data-page="welcome-about">Welcome</a></li>
-      <li><a href="#" data-page="bible-overview">Bible</a></li>
-      <li><a href="#" data-page="doctrine-salvation">Doctrine</a></li>
-      <li><a href="#" data-page="living-walking">Christian Living</a></li>
-      <li><a href="#" data-page="history-timeline">History</a></li>
-      <li><a href="#" data-page="reference-topical-index">Reference</a></li>
-      <li><a href="#" data-page="qna-difficult">Q&A</a></li>
-      <li><a href="#" data-page="growth-reading-plans">Growth</a></li>
-    </ul>
+  <!-- NAV -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a class="logo" href="#/" aria-label="The Berean Library home">The Berean Library</a>
+
+      <button id="mobile-menu-button" class="menu-icon" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">☰</button>
+
+      <div id="main-menu" class="menu" role="navigation">
+        <!-- Welcome Hall -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Welcome Hall ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/welcome/about">About the Library</a></li>
+            <li><a href="#/welcome/new-believers">New Believers Guide</a></li>
+            <li><a href="#/welcome/howto">How to Use This Library</a></li>
+            <li><a href="#/welcome/testimony">My Personal Testimony</a></li>
+            <li><a href="#/welcome/evaluating">Main Questions — Evaluating Christianity</a></li>
+            <li><a href="#/welcome/vs-other">Christianity vs Other Religions</a></li>
+          </ul>
+        </div>
+
+        <!-- Bible Wing -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Bible Wing ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/bible/overview">Overview of Bible Structure</a></li>
+            <li><a href="#/bible/books">Books of the Bible</a></li>
+            <li><a href="#/bible/translations">How the Bible Has Been Translated</a></li>
+            <li><a href="#/bible/timeline">Full Timeline of the Bible</a></li>
+            <li><a href="#/bible/reading">How to Read the Word</a></li>
+            <li class="sub-dropdown">
+              <button class="menu-link sub">Word Studies ▸</button>
+              <ul class="dropdown-menu sub">
+                <li><a href="#/bible/word-studies">Word Studies (index)</a></li>
+              </ul>
+            </li>
+            <li><a href="#/bible/versions">Bible Versions I Read From</a></li>
+            <li><a href="#/bible/study-websites">Top Websites for Original Languages</a></li>
+          </ul>
+        </div>
+
+        <!-- Doctrine -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Doctrine & Theology ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/doctrine/salvation">Salvation</a></li>
+            <li><a href="#/doctrine/heaven-hell">Heaven & Hell</a></li>
+            <li><a href="#/doctrine/end-times">End Times</a></li>
+            <li><a href="#/doctrine/holy-spirit">The Holy Spirit</a></li>
+            <li><a href="#/doctrine/satan">Satan: Analysis</a></li>
+            <li><a href="#/doctrine/baptism">Baptism</a></li>
+            <li><a href="#/doctrine/church">The Church</a></li>
+            <li><a href="#/doctrine/difficult">Difficult Questions</a></li>
+            <li><a href="#/doctrine/discernment">Biblical Discernment Guide</a></li>
+            <li><a href="#/doctrine/deception">Ways Christians Are Led Astray</a></li>
+          </ul>
+        </div>
+
+        <!-- Christian Living -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Christian Living ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/living/walking">Walking with God</a></li>
+            <li><a href="#/living/prayer">How to Pray</a></li>
+            <li><a href="#/living/marriage">Godly Marriage & Singleness</a></li>
+            <li><a href="#/living/lukewarm">Lukewarm Christianity</a></li>
+            <li><a href="#/living/habits">Worldly vs Godly Habits</a></li>
+            <li><a href="#/living/discipleship">Discipleship Pathways</a></li>
+            <li><a href="#/living/jesus">Jesus's Ministry</a></li>
+            <li><a href="#/living/fruits">Fruits of the Spirit</a></li>
+            <li><a href="#/living/gifts">Gifts of the Spirit</a></li>
+          </ul>
+        </div>
+
+        <!-- Church History -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Church History ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/history/timeline">Timeline of the Church</a></li>
+            <li><a href="#/history/apostles-death">Death of the 12 Apostles</a></li>
+            <li><a href="#/history/faithful">Faithful Witnesses</a></li>
+            <li><a href="#/history/lessons">Lessons From History</a></li>
+            <li><a href="#/history/denominations">Different Denominations</a></li>
+            <li><a href="#/history/evaluation-checklist">Church Evaluation Checklist</a></li>
+          </ul>
+        </div>
+
+        <!-- Reference -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Reference & Research ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/reference/topical">Topical Index</a></li>
+            <li><a href="#/reference/research">Interesting Research Topics</a></li>
+            <li><a href="#/reference/youtube">Recommended YouTube Channels</a></li>
+            <li><a href="#/reference/pastors">Pastors I Listen To</a></li>
+            <li><a href="#/reference/websites">Websites I Use</a></li>
+            <li><a href="#/reference/infographics">Infographics & Charts</a></li>
+            <li><a href="#/reference/study-methods">Bible Study Methods</a></li>
+          </ul>
+        </div>
+
+        <!-- Q&A -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Q&A Room ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/qna/difficult">Difficult Questions</a></li>
+            <li><a href="#/qna/salvation-prayer">Salvation & Prayer</a></li>
+            <li><a href="#/qna/everyday">Everyday Christian Life</a></li>
+            <li><a href="#/qna/discernment">Discernment</a></li>
+          </ul>
+        </div>
+
+        <!-- Growth -->
+        <div class="menu-section dropdown">
+          <button class="menu-link">Growth Hall ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/growth/reading-plans">Bible Reading Plans</a></li>
+            <li><a href="#/growth/small-groups">Small Group Studies</a></li>
+            <li><a href="#/growth/topical-studies">Topical Studies</a></li>
+            <li><a href="#/growth/reflections">Personal Reflections</a></li>
+          </ul>
+        </div>
+
+        <div class="menu-right">
+          <input id="site-search" class="search-input" type="search" placeholder="Search the Library..." aria-label="Search" />
+        </div>
+      </div>
+    </div>
   </nav>
-  <footer>
-    <p>&copy; <span id="year"></span> The Berean Library</p>
+
+  <!-- BREADCRUMB -->
+  <div id="breadcrumb" class="breadcrumb" aria-hidden="true"></div>
+
+  <!-- MAIN CONTENT -->
+  <main id="content" class="content" role="main" tabindex="-1">
+    <article id="page">
+      <h1>Welcome to The Berean Library</h1>
+      <p>
+        Scripture-centered. Non-denominational. Evangelical. A resource for new believers and seasoned saints.
+        Use the menu to navigate — every article is Scripture-rooted. Replace placeholders with your full content over time.
+      </p>
+      <p>
+        Quick starters: <a href="#/welcome/new-believers">New Believers Guide</a> •
+        <a href="#/bible/overview">Overview of the Bible</a> •
+        <a href="#/doctrine/salvation">Salvation</a>.
+      </p>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> The Berean Library. Scripture-centered, evangelical, non-denominational.</p>
+      <p><small>All content is Scripture-saturated and meant to point people to Jesus. Use freely for discipleship and study.</small></p>
+    </div>
   </footer>
-</div>
 
-<div class="content-area" id="content-area">
-  <section class="hero">
-    <h1>Welcome to The Berean Library</h1>
-    <p>Your seminary-level digital library for Bible study, theological research, and spiritual growth. Use the sidebar to explore.</p>
-  </section>
-
-  <section class="cards-grid">
-    <a href="#" data-page="bible-overview" class="card">
-      <h3>Bible</h3>
-      <p>Explore books, translations, timelines, and word studies.</p>
-    </a>
-    <a href="#" data-page="doctrine-salvation" class="card">
-      <h3>Doctrine</h3>
-      <p>Salvation, end times, holy spirit, baptism, heaven & hell, and more.</p>
-    </a>
-    <a href="#" data-page="living-walking" class="card">
-      <h3>Christian Living</h3>
-      <p>Prayer, discipleship, marriage, habits, fruits & gifts of the Spirit.</p>
-    </a>
-    <a href="#" data-page="history-timeline" class="card">
-      <h3>History</h3>
-      <p>Early church, apostles, denominations, faithful witnesses, and evaluations.</p>
-    </a>
-    <a href="#" data-page="reference-topical-index" class="card">
-      <h3>Reference</h3>
-      <p>Research topics, YouTube channels, pastors, study tools, and websites.</p>
-    </a>
-    <a href="#" data-page="qna-difficult" class="card">
-      <h3>Q&A</h3>
-      <p>Answers to difficult questions and everyday Christian challenges.</p>
-    </a>
-    <a href="#" data-page="growth-reading-plans" class="card">
-      <h3>Growth</h3>
-      <p>Reading plans, small groups, topical studies, and personal reflections.</p>
-    </a>
-  </section>
-</div>
-
-<script src="assets/js/nav.js"></script>
-<script src="assets/js/content-loader.js"></script>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Add card click behavior same as sidebar
-const cards = document.querySelectorAll('.cards-grid .card');
-cards.forEach(card => {
-  card.addEventListener('click', (e) => {
-    e.preventDefault();
-    const page = card.dataset.page;
-    loadContent(page);
-  });
-});
-</script>
-
+  <!-- SCRIPTS -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/content-loader.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // initialize content loader (loads default or route)
+    ContentLoader.init();
+    Search.init();
+  </script>
 </body>
 </html>
