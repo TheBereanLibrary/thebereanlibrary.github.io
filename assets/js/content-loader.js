@@ -7,7 +7,7 @@ function loadContent(page) {
       contentArea.innerHTML = `<h2>${data.title}</h2><p>${data.content}</p>`;
     })
     .catch(err => {
-      contentArea.innerHTML = '<h2>Content Not Found</h2><p>This section is not yet available.</p>';
+      contentArea.innerHTML = `<h2>Content Not Found</h2><p>This section is not yet available.</p>`;
       console.error(err);
     });
 }
