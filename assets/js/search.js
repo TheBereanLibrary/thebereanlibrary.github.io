@@ -1,47 +1,85 @@
-// search.js — live search with highlight & keyboard nav
-import { CONTENT_FILES } from './content-routes.js';
+// search.js — site-wide search for JSON content
+
+import { ROUTES, loadContent } from './content-loader.js';
 
 const searchInput = document.getElementById('site-search');
+const resultsContainer = document.createElement('div');
+resultsContainer.className = 'search-results';
+resultsContainer.style.display = 'none';
+searchInput.parentNode.appendChild(resultsContainer);
+
 let allContent = [];
 
-async function loadAllContent(){
-  for(const file of CONTENT_FILES){
-    const res = await fetch(file);
-    const data = await res.json();
-    allContent.push({file, title:data.title||'', body:data.body.map(b=>b.text||'').join(' ')});
-  }
-}
-loadAllContent();
-
-function highlightTerm(text, term){
-  const re = new RegExp(`(${term})`, 'gi');
-  return text.replace(re, '<mark>$1</mark>');
-}
-
-let resultsPanel;
-searchInput.addEventListener('input', e=>{
-  const term = e.target.value.trim();
-  if(!term){ removeResults(); return; }
-  if(!resultsPanel){
-    resultsPanel = document.createElement('div');
-    resultsPanel.className='search-results';
-    searchInput.parentElement.appendChild(resultsPanel);
-  }
-  resultsPanel.innerHTML='';
-  let matches = 0;
-  allContent.forEach(c=>{
-    if(c.title.toLowerCase().includes(term.toLowerCase()) || c.body.toLowerCase().includes(term.toLowerCase())){
-      matches++;
-      const snippet = c.body.substring(0,120) + (c.body.length>120?'…':'');
-      const div = document.createElement('div');
-      div.className='result';
-      div.innerHTML = `<a href="#${Object.keys(ROUTES).find(k=>ROUTES[k]===c.file)}">${highlightTerm(c.title, term)}</a><p>${highlightTerm(snippet, term)}</p>`;
-      resultsPanel.appendChild(div);
+// Load all JSON content for search
+async function loadAllContent() {
+  const promises = Object.entries(ROUTES).map(async ([route, file]) => {
+    try {
+      const res = await fetch(file);
+      const data = await res.json();
+      if (data.content) {
+        allContent.push({ route, title: data.title || '', content: data.content.replace(/<[^>]+>/g, '') });
+      }
+    } catch (err) {
+      console.error('Error loading search content:', file, err);
     }
   });
-  if(matches===0) resultsPanel.innerHTML='<p>No results found.</p>';
+  await Promise.all(promises);
+}
+
+// Filter search results
+function search(query) {
+  if (!query) return [];
+  const lowerQuery = query.toLowerCase();
+  return allContent
+    .filter(item => item.title.toLowerCase().includes(lowerQuery) || item.content.toLowerCase().includes(lowerQuery))
+    .slice(0, 10); // max 10 results
+}
+
+// Render search results
+function renderResults(results) {
+  if (results.length === 0) {
+    resultsContainer.innerHTML = '<p style="padding:0.5rem;color:#666;">No results found</p>';
+    resultsContainer.style.display = 'block';
+    return;
+  }
+
+  resultsContainer.innerHTML = results.map(r => `
+    <div class="result">
+      <a href="#${r.route}">${r.title}</a>
+      <p>${r.content.substring(0, 120)}${r.content.length > 120 ? '...' : ''}</p>
+    </div>
+  `).join('');
+  resultsContainer.style.display = 'block';
+}
+
+// Handle input
+searchInput.addEventListener('input', (e) => {
+  const query = e.target.value.trim();
+  if (!query) {
+    resultsContainer.style.display = 'none';
+    return;
+  }
+  const results = search(query);
+  renderResults(results);
 });
 
-function removeResults(){ if(resultsPanel){ resultsPanel.remove(); resultsPanel=null; } }
-document.addEventListener('click', e=>{ if(!searchInput.contains(e.target)) removeResults(); });
+// Click on result
+resultsContainer.addEventListener('click', e => {
+  const a = e.target.closest('a');
+  if (a) {
+    loadContent(a.getAttribute('href')).then(() => {
+      resultsContainer.style.display = 'none';
+      searchInput.value = '';
+    });
+  }
+});
 
+// Close results when clicking outside
+document.addEventListener('click', e => {
+  if (!resultsContainer.contains(e.target) && e.target !== searchInput) {
+    resultsContainer.style.display = 'none';
+  }
+});
+
+// Initialize
+loadAllContent();
