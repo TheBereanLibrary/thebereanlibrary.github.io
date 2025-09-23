@@ -1,4 +1,4 @@
-// content-loader.js — loads JSON content dynamically
+// content-loader.js — loads JSON content dynamically and handles TOC
 import { ROUTES } from './content-routes.js';
 
 const contentContainer = document.getElementById('page');
@@ -15,6 +15,7 @@ async function loadContent(hash) {
 
   try {
     const res = await fetch(file);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     renderContent(data);
     buildBreadcrumb(route);
@@ -27,13 +28,28 @@ async function loadContent(hash) {
 function renderContent(data) {
   let html = '';
   if (data.title) html += `<h1>${data.title}</h1>`;
-  if (data.content) html += data.content;   // ✅ support your JSON structure
+
+  // Generate Table of Contents if present
+  if (data.toc && Array.isArray(data.toc)) {
+    html += '<nav class="toc"><ul>';
+    data.toc.forEach(item => {
+      html += `<li><a href="#${item.href}">${item.label}</a></li>`;
+    });
+    html += '</ul></nav>';
+  }
+
+  // Insert main content
+  if (data.content) html += data.content;
+
   contentContainer.innerHTML = html;
 }
 
 function buildBreadcrumb(route) {
   const parts = route.split('/').filter(Boolean);
-  if (parts.length === 0) { breadcrumb.style.display = 'none'; return; }
+  if (parts.length === 0) {
+    breadcrumb.style.display = 'none';
+    return;
+  }
   breadcrumb.style.display = 'block';
   let html = `<a href="#/">Home</a>`;
   let path = '';
@@ -44,5 +60,6 @@ function buildBreadcrumb(route) {
   breadcrumb.innerHTML = html;
 }
 
+// Event listeners
 window.addEventListener('hashchange', () => loadContent(location.hash));
-window.addEventListener('load', () => loadContent(location.hash));
+window.addEventListener('DOMContentLoaded', () => loadContent(location.hash));
