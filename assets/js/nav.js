@@ -1,30 +1,22 @@
-// nav.js — handles mobile toggle & dropdowns
-const mobileButton = document.getElementById('mobile-menu-button');
-const mainMenu = document.getElementById('main-menu');
+// nav.js — handles mobile menu toggle and dropdowns
+const menuBtn = document.getElementById('mobile-menu-button');
+const menu = document.getElementById('main-menu');
 
-mobileButton.addEventListener('click', () => {
-  const expanded = mobileButton.getAttribute('aria-expanded') === 'true';
-  mobileButton.setAttribute('aria-expanded', !expanded);
-  mainMenu.style.display = expanded ? 'none' : 'flex';
+// Mobile menu toggle
+menuBtn.addEventListener('click', () => {
+  const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+  menuBtn.setAttribute('aria-expanded', !expanded);
+  menu.classList.toggle('open');
 });
 
-// dropdown toggle on mobile
-document.querySelectorAll('.menu-section.dropdown > .menu-link').forEach(btn => {
+// Desktop dropdowns
+const dropdowns = document.querySelectorAll('.menu-section.dropdown');
+dropdowns.forEach(drop => {
+  const btn = drop.querySelector('.menu-link');
   btn.addEventListener('click', e => {
-    if(window.innerWidth < 980){
-      e.preventDefault();
-      const parent = btn.parentElement;
-      parent.classList.toggle('open');
+    // Only for mobile, ignore desktop hover
+    if (window.innerWidth <= 980) {
+      drop.classList.toggle('open');
     }
   });
 });
-
-// highlight active menu based on hash
-function highlightActiveMenu() {
-  const hash = location.hash.replace(/^#/, '') || '/';
-  document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
-  const link = document.querySelector(`.menu a[href="#${hash}"]`);
-  if(link) link.classList.add('active');
-}
-window.addEventListener('hashchange', highlightActiveMenu);
-window.addEventListener('load', highlightActiveMenu);
