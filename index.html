@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Berean Library — Scripture-centered Resources</title>
-  <meta name="description" content="The Berean Library: a Scripture-centered, non-denominational evangelical resource. Bible study, doctrine, Christian living, research, and Q&A." />
+  <meta name="description" content="The Berean Library: Scripture-centered, non-denominational evangelical resource.">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -13,64 +13,58 @@
   <nav class="navbar" aria-label="Main navigation">
     <div class="navbar-container">
       <a class="logo" href="#/" aria-label="The Berean Library home">The Berean Library</a>
-      <button id="mobile-menu-button" class="menu-icon" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">☰</button>
-      <div id="main-menu" class="menu" role="navigation">
-        <!-- Example menu section -->
+      <button id="mobile-menu-button" class="menu-icon" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <div id="main-menu" class="menu">
         <div class="menu-section dropdown">
-          <button class="menu-link">Welcome Hall ▾</button>
+          <button class="menu-link">Welcome ▾</button>
           <ul class="dropdown-menu">
             <li><a href="#/welcome/about">About the Library</a></li>
             <li><a href="#/welcome/new-believers">New Believers Guide</a></li>
             <li><a href="#/welcome/howto">How to Use This Library</a></li>
-            <li><a href="#/welcome/testimony">My Personal Testimony</a></li>
-            <li><a href="#/welcome/evaluating">Main Questions — Evaluating Christianity</a></li>
-            <li><a href="#/welcome/vs-other">Christianity vs Other Religions</a></li>
           </ul>
         </div>
-        <!-- Add other sections here (Bible, Doctrine, Living, History, Reference, Q&A, Growth) -->
-
-        <div class="menu-right">
-          <input id="site-search" class="search-input" type="search" placeholder="Search the Library..." aria-label="Search" />
+        <div class="menu-section dropdown">
+          <button class="menu-link">Bible ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/bible/overview">Overview</a></li>
+            <li><a href="#/bible/books">Books of the Bible</a></li>
+          </ul>
+        </div>
+        <div class="menu-section dropdown">
+          <button class="menu-link">Doctrine ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#/doctrine/salvation">Salvation</a></li>
+            <li><a href="#/doctrine-heaven-hell">Heaven & Hell</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- BREADCRUMB -->
-  <div id="breadcrumb" class="breadcrumb" aria-hidden="true"></div>
+  <!-- Breadcrumb -->
+  <div id="breadcrumb" class="breadcrumb"></div>
 
-  <!-- MAIN CONTENT -->
-  <main id="content" class="content" role="main" tabindex="-1">
+  <!-- Main Content -->
+  <main class="content">
     <article id="page">
       <h1>Welcome to The Berean Library</h1>
-      <p>
-        Scripture-centered. Non-denominational. Evangelical. A resource for new believers and seasoned saints.
-        Use the menu to navigate — every article is Scripture-rooted.
-      </p>
-      <p>
-        Quick starters: <a href="#/welcome/new-believers">New Believers Guide</a> •
-        <a href="#/bible/overview">Overview of the Bible</a> •
-        <a href="#/doctrine/salvation">Salvation</a>.
-      </p>
+      <p>Scripture-centered. Non-denominational. Evangelical. Use the menu to navigate.</p>
     </article>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> The Berean Library. Scripture-centered, evangelical, non-denominational.</p>
-      <p><small>All content is Scripture-saturated and meant to point people to Jesus. Use freely for discipleship and study.</small></p>
+      <p>&copy; <span id="year"></span> The Berean Library</p>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   <script type="module">
     import './assets/js/content-loader.js';
-    import './assets/js/search.js';
     import './assets/js/nav.js';
-
-    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
