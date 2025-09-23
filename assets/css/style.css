@@ -2,7 +2,7 @@
 
 /* Basic reset */
 * { box-sizing:border-box; margin:0; padding:0; }
-html,body { height:100%; font-family:"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background:#fbfcfd; color:#0b1724; }
+html, body { height:100%; font-family:"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background:#fbfcfd; color:#0b1724; }
 
 /* Container */
 .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
@@ -64,9 +64,10 @@ mark { background: #ffeaa0; color:#0b1724; }
 /* Responsive */
 @media (max-width: 980px) {
   .menu { display:none; position:fixed; left:0; right:0; top:60px; bottom:0; padding:1rem; flex-direction:column; overflow:auto; background:linear-gradient(180deg,#163452,#0f2b44); gap:0; z-index:3000; }
-  .menu-icon { display:block; }
+  .menu.open { display:flex; }
   .dropdown-menu { position:static; display:none; background:transparent; box-shadow:none; padding:0; }
   .menu-section.open > .dropdown-menu { display:flex; flex-direction:column; padding-left:0.6rem; }
+  .menu-right { width:100%; margin-top:0.6rem; }
   .search-input { width:100%; }
   .breadcrumb { display:block; }
 }
